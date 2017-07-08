@@ -1,0 +1,12 @@
+<div class="article">
+  <h1><%= @article.title %></h1>
+  <p><%= @article.date_published %></p>
+  <p><%= @article.summary %></p>
+  <% if @article.lead_image_url %>
+    <%= image_tag(@article.lead_image_url) %>
+  <% end %>
+  <p><em><%= link_to 'Original article', @article.url %></em></p>
+  <%= raw @article.content %>
+</div>
+
+

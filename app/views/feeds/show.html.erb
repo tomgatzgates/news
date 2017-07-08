@@ -1,0 +1,9 @@
+<h1><%= @feed.title %></h1>
+<% @feed.articles.each do |article| %>
+  <p>
+    <%= link_to article.title,
+        feed_article_path(@feed, article.slug) %>
+  </p>
+  <hr />
+<% end %>
+

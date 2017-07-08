@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.article {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.article img {
+  width: 100%;
+  border-radius: 10px;
+}
