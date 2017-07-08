@@ -15,7 +15,7 @@ class Feed < ApplicationRecord
 
   def data
     @_data ||= parsed.entries.reduce({}) do |obj, entry|
-      article = Article.new(entry)
+      article = Article.new(entry, self)
       obj[article.slug] = article
       obj
     end

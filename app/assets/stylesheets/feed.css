@@ -1,0 +1,9 @@
+#feed-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#feed-container .article-item {
+  font-family: 'avenir';
+  margin: 1rem 0;
+}

@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = article
+    @feed = feed
   end
 
   private

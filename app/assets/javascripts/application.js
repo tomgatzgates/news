@@ -13,3 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', function() {
+  document.getElementById('article').className += ' animated fadeInUp';
+});
+document.addEventListener('turbolinks:request-end', function() {
+  document.getElementById('article').className += ' animated fadeOutDown';
+});

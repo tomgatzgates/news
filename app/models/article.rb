@@ -1,7 +1,10 @@
 class Article
-  def initialize(entry)
+  def initialize(entry, feed)
     @entry = entry
+    @feed = feed
   end
+
+  attr_reader :feed
 
   delegate :id, :url, :title, :summary, to: :entry
   delegate :content, :author, :date_published, :lead_image_url, to: :page
