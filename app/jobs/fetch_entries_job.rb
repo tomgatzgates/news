@@ -24,8 +24,15 @@ class FetchEntriesJob < ApplicationJob
     feed.entries.create!(
       entry_id: entry.id,
       title: entry.title,
-      url: entry.url
+      url: entry.url,
+      data: entry_data(entry)
     )
+  end
+
+  def entry_data(entry)
+    Hash[JSON.parse(entry.to_json)]
+      .symbolize_keys
+      .slice(*Entry::ATTRS)
   end
 
   def new_entries

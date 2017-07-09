@@ -1,8 +1,20 @@
-<div class="entry-list">
+<ul class="entry-list">
 <% entries.each do |entry| %>
-  <div class="entry">
-    <p class="title">
-      <%= link_to entry.title, feed_entry_path(entry.feed, entry) %>
-    </p>
-  </div>
+  <li class="entry media">
+    <%= link_to feed_entry_path(entry.feed, entry) do %>
+      <% if entry.image %>
+        <div class="media-figure">
+          <%= image_tag entry.image, class: 'media-img' %>
+        </div>
+      <% end %>
+      <div class="media-body">
+        <h3 class="title"><%= entry.title %></h3>
+        <p class="summary">
+          <%= truncate(entry.summary, length: 140) %>
+
+        </p>
+      </div>
+    <% end %>
+  </li>
 <% end %>
+</ul>

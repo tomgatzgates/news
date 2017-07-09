@@ -7,10 +7,11 @@
 </nav>
 
 <div id="feed-container">
-  <h1><%= @feed.title %></h1>
-
-  <%= render partial: 'entries/collection',
-             locals: {entries: @feed.entries} %>
+  <div class="entry-page">
+    <h1><%= @feed.title %></h1>
+    <%= render partial: 'entries/collection',
+               locals: {entries: @feed.entries} %>
+  </div>
 </div>
 
 
