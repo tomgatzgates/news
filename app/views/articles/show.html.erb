@@ -1,7 +1,8 @@
+<nav class="top">
+  <%= link_to feed_path @article.feed do %>
+    &#171; Back
+  <% end %>
+</nav>
 <div id="article" class="article">
-  <%= render partial: 'article' %>
-</div>
-
-<div>
-  <%= render partial: 'collection', locals: { articles: @feed.articles } %>
+  <%= render partial: 'article', locals: {article: @article} %>
 </div>

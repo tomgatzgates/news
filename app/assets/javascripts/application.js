@@ -17,6 +17,6 @@
 document.addEventListener('turbolinks:load', function() {
   document.getElementById('article').className += ' animated fadeInUp';
 });
-document.addEventListener('turbolinks:request-end', function() {
+document.addEventListener('turbolinks:before-render', function() {
   document.getElementById('article').className += ' animated fadeOutDown';
 });

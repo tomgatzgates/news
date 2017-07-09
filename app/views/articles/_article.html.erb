@@ -1,14 +1,13 @@
-<h1>
-  <%= @article.title %>
-  <%= link_to @article.url do %>
-    &#187;
+<article>
+  <h1>
+    <%= link_to article.url do %>
+      <%= article.title %>
+    <% end %>
+  </h1>
+  <% if article.published_at %>
+    <p class="published"><%= published(article.published_at) %></p>
   <% end %>
-</h1>
-<p><em></em></p>
-<p><%= @article.date_published %></p>
-<p><strong><%= @article.summary %></strong></p>
-<% if @article.lead_image_url %>
-  <%= image_tag(@article.lead_image_url) %>
-<% end %>
+  <p><strong><%= article.summary %></strong></p>
 
-<%= raw @article.content %>
+  <%= raw article.content %>
+</article>

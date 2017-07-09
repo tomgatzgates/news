@@ -7,7 +7,12 @@ class Article
   attr_reader :feed
 
   delegate :id, :url, :title, :summary, to: :entry
-  delegate :content, :author, :date_published, :lead_image_url, to: :page
+  delegate :content, :author, :date_published, :lead_image_url, :dek, to: :page
+
+  def published_at
+    return unless date_published
+    Date.parse(date_published)
+  end
 
   def slug
     Base64.urlsafe_encode64(id)

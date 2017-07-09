@@ -12,34 +12,24 @@
  *
  *= require_tree .
  *= require_self
+ *= require reset
+ *= require typography
  *= require animate
+ *= require article
  */
 body {
   font-family: 'avenir';
 }
 
-
-.article {
-  max-width: 700px;
-  margin: 0 auto;
-  font-family: 'avenir';
-}
-.article h1, .article p  {
-  max-width: 550px;
-  margin: 0 auto;
-}
-.article a {
-  color: lightblue;
-}
-.article h1 {
-  border-left: 0.5rem solid lightblue;
-  padding-left: 0.5rem;
-}
-.article h1 a {
-  text-decoration: none;
-}
-.article img {
+nav.top {
+  display: block;
   width: 100%;
-  margin: 2rem 0;
-  /*border-radius: 10px;*/
+  background: lightblue;
+  font-weight: 700;
+  color: white;
+  padding: 16px;
+}
+nav.top a {
+  color: white;
+  text-decoration: none;
 }
