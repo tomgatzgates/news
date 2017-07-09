@@ -9,8 +9,8 @@
 <div id="feed-container">
   <h1><%= @feed.title %></h1>
 
-  <%= render partial: 'articles/collection',
-             locals: {articles: @feed.articles} %>
+  <%= render partial: 'entries/collection',
+             locals: {entries: @feed.entries} %>
 </div>
 
 

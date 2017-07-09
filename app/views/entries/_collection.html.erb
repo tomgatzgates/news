@@ -1,0 +1,8 @@
+<div class="article-list">
+<% entries.each do |entry| %>
+  <div class="article-item">
+    <%= link_to feed_entry_path(entry.feed, entry) do %>
+      <h2 class="title"><%= entry.title %></h2>
+    <% end %>
+  </div>
+<% end %>

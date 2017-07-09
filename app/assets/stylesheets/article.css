@@ -60,6 +60,8 @@ article img, article picture {
   /*border-radius: 10px;*/
 }
 
+
+/* A figure is could be an imageor a graph or a Definition List*/
 article figure cite,
 article figure figcaption {
   display: block;

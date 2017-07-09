@@ -1,12 +1,9 @@
 class Article
-  def initialize(entry, feed)
+  def initialize(entry)
     @entry = entry
-    @feed = feed
   end
 
-  attr_reader :feed
-
-  delegate :id, :url, :title, :summary, to: :entry
+  delegate :feed, :id, :url, :title, to: :entry
   delegate :content, :author, :date_published, :lead_image_url, :dek, to: :page
 
   def published_at
@@ -14,44 +11,47 @@ class Article
     Date.parse(date_published)
   end
 
-  def slug
-    Base64.urlsafe_encode64(id)
-  end
-
   private
+
+  attr_reader :entry
 
   def page
     Rails.cache.fetch(cache_key, expires_in: 12.hours) do
-      Rails.logger.info "Caching article: #{cache_key}"
-
-      mercury.parse(url)
+      begin
+        entry.log "caching article: #{cache_key}"
+        mercury.parse(url)
+      rescue => e
+        entry.log "error parsing article: #{e}", :error
+        entry.touch :reported_at
+      end
     end
   end
 
   def cache_key
-    ['articles', slug, 'page'].join('/')
+    ['entry', id, 'article'].join('/')
   end
 
   # TODO: extract this out
   def mercury
-    @_mercury ||= MercuryParser::Client.new(api_key: Rails.application.secrets.mercury_token)
+    @_mercury ||= MercuryParser::Client.new(
+      api_key: Rails.application.secrets.mercury_token
+    )
   end
-
-  attr_reader :entry
 end
 
 # Mercury attrs
-# article.title
-# article.content
-# article.author
-# article.date_published
-# article.lead_image_url
-# article.dek
-# article.next_page_url
-# article.url
-# article.domain
-# article.excerpt
-# article.word_count
-# article.direction
-# article.total_pages
-# article.rendered_pages
+# =============
+# title
+# content
+# author
+# date_published
+# lead_image_url
+# dek
+# next_page_url
+# url
+# domain
+# excerpt
+# word_count
+# direction
+# total_pages
+# rendered_pages

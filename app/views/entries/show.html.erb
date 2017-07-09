@@ -1,0 +1,12 @@
+<nav class="top">
+  <div class="container">
+    <%= link_to feed_path @entry.feed do %>
+      &#171; <%= @entry.feed.title %>
+    <% end %>
+  </div>
+</nav>
+
+<div id="article" class="article">
+  <%= render partial: 'articles/article',
+             locals: {article: @entry.article} %>
+</div>

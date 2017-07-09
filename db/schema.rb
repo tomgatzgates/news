@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708170714) do
+ActiveRecord::Schema.define(version: 20170709110517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entries", force: :cascade do |t|
+    t.bigint "feed_id", null: false
+    t.string "entry_id", null: false
+    t.string "title", null: false
+    t.string "url", null: false
+    t.datetime "reported_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_entries_on_entry_id"
+    t.index ["feed_id"], name: "index_entries_on_feed_id"
+  end
 
   create_table "feeds", force: :cascade do |t|
     t.string "title", null: false

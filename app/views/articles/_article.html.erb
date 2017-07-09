@@ -1,4 +1,3 @@
-<% cache article do %>
 <article>
   <h1>
     <%= link_to article.url do %>
@@ -8,8 +7,6 @@
   <% if article.published_at %>
     <p class="published"><%= published(article.published_at) %></p>
   <% end %>
-  <p><strong><%= article.summary %></strong></p>
 
   <%= raw article.content %>
 </article>
-<% end %>

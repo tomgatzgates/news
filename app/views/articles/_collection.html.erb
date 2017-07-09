@@ -1,9 +1,0 @@
-<div class="article-list">
-<% articles.each do |article| %>
-  <div class="article-item">
-    <%= link_to feed_article_path(article.feed, article.slug) do %>
-      <h2 class="title"><%= article.title %></h2>
-      <p class="summary"><%= article.summary %></p>
-    <% end %>
-  </div>
-<% end %>
