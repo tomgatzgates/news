@@ -33,7 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'feedjira'
-gem 'mercury_parser'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'httparty'

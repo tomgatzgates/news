@@ -11,6 +11,10 @@ class Article
     Date.parse(date_published)
   end
 
+  def feed_favicon
+    entry.feed.favicon_url
+  end
+
   private
 
   attr_reader :entry
@@ -19,7 +23,7 @@ class Article
     Rails.cache.fetch(cache_key, expires_in: 12.hours) do
       begin
         entry.log "caching article: #{cache_key}"
-        mercury.parse(url)
+        Mercury.parse(url)
       rescue => e
         entry.log "error parsing article: #{e}", :error
         entry.touch :reported_at
@@ -29,13 +33,6 @@ class Article
 
   def cache_key
     ['entry', id, 'article'].join('/')
-  end
-
-  # TODO: extract this out
-  def mercury
-    @_mercury ||= MercuryParser::Client.new(
-      api_key: Rails.application.secrets.mercury_token
-    )
   end
 end
 

@@ -7,6 +7,10 @@
 
   <% if article.published_at %>
     <p class="published">
+      <% if article.feed_favicon %>
+        <%= image_tag article.feed_favicon, class: 'icon' %>
+        <br/>
+      <% end %>
       <%= published(article.published_at) %>
       <% if article.author %>
         <br />
