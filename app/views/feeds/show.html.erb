@@ -1,8 +1,11 @@
 <nav class="top">
-  <%= link_to feeds_path do %>
-    &#171; Feeds
-  <% end %>
+  <div class="container">
+    <%= link_to feeds_path do %>
+      &#171; Feeds
+    <% end %>
+  </div>
 </nav>
+
 <div id="feed-container">
   <h1><%= @feed.title %></h1>
 

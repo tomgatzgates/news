@@ -12,7 +12,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.new(feed_params.merge(title: parsed_feed.title))
+    @feed = Feed.new(feed_params)
 
     if @feed.save
       flash[:notice] = "Successfully created feed!"
@@ -27,9 +27,5 @@ class FeedsController < ApplicationController
 
   def feed_params
     params.require(:feed).permit(:url)
-  end
-
-  def parsed_feed
-    Feedjira::Feed.fetch_and_parse feed_params[:url]
   end
 end

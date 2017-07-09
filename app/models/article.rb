@@ -21,7 +21,14 @@ class Article
   private
 
   def page
-    @_mercury ||= mercury.parse(url)
+    Rails.cache.fetch(cache_key, expires_in: 12.hours) do
+      Rails.logger.info "Caching article: #{cache_key}"
+      mercury.parse(url)
+    end
+  end
+
+  def cache_key
+    ['articles', slug, 'page'].join('/')
   end
 
   # TODO: extract this out
