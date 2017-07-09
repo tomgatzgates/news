@@ -1,0 +1,13 @@
+/* List of articles */
+.entry {
+  /*padding: 1rem;*/
+}
+
+.entry .title {
+  color: #333;
+  font-size: 1rem;
+}
+
+.entry a {
+  text-decoration: none;
+}

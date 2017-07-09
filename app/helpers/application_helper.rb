@@ -1,6 +1,6 @@
 module ApplicationHelper
   def published(date)
     return unless date
-    date.strftime("Published on %A, %e %B %Y")
+    date.strftime("Published %A, #{date.day.ordinalize} %B %Y")
   end
 end

@@ -16,7 +16,8 @@ article h1 {
   text-align: center;
 }
 article h1 a {
-  text-decoration: none;
+  border-bottom: none;
+  font-style: normal;
 }
 
 article h2 {
@@ -31,9 +32,11 @@ article h3 {
 }
 article .published {
   text-align: center;
-  color: #999;
+  color: lightblue;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  margin: 2rem auto;
 }
 
 article p {
@@ -44,8 +47,9 @@ article p {
 article a {
   color: #333;
   font-style: italic;
-  text-decoration: underline;
-  text-decoration-color: lightblue;
+  text-decoration: none;
+  border-bottom: 2px solid lightblue;
+
 }
 
 article figure {
@@ -76,23 +80,24 @@ article aside {
   padding: 2rem;
   font-weight: 700;
   color: lightblue;
+  font-size: 1.1em;
 }
 
 
-/* List of articles */
-.article-item {
-  background: white;
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
-  padding: 1rem;
+progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background-color: transparent;
+  color: lightblue;
 }
-.article-item .title {
-  color: #333;
-  font-size: 1rem;
-}
-.article-item .summary {
-  color: #999;
-}
-.article-item a {
-  color: #333;
-}
-
+progress::-webkit-progress-bar { background-color: transparent; }
+progress::-webkit-progress-value {background-color: lightblue; }
+progress::-moz-progress-bar {background-color: lightblue; }

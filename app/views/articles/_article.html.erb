@@ -4,8 +4,15 @@
       <%= article.title %>
     <% end %>
   </h1>
+
   <% if article.published_at %>
-    <p class="published"><%= published(article.published_at) %></p>
+    <p class="published">
+      <%= published(article.published_at) %>
+      <% if article.author %>
+        <br />
+        By <%= article.author %>
+      <% end %>
+    </p>
   <% end %>
 
   <%= raw article.content %>
