@@ -1,6 +1,16 @@
 /* List of articles */
 .entry {
-  /*padding: 1rem;*/
+  padding: 1rem;
+  /*border-bottom: 1px solid lightblue;*/
+}
+.entry p {
+  /*margin: 0*/
+}
+
+.entry a {
+  font-style: italic;
+  border-bottom: 1px solid lightblue;
+  color: #333;
 }
 
 .entry .title {

@@ -2,6 +2,7 @@ html {
   font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 body {
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {

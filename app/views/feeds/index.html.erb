@@ -1,5 +1,8 @@
 <h1>Feeds</h1>
 <% @feeds.each do |feed| %>
+  <% if feed.favicon_url %>
+    <%= image_tag(feed.favicon_url, class: 'icon') %>
+  <% end %>
   <p><%= link_to feed.title, feed %></p>
 <% end %>
 

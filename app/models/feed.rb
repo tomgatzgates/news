@@ -1,7 +1,7 @@
 class Feed < ApplicationRecord
   has_many :entries, dependent: :destroy
 
-  before_create :set_title
+  before_create :set_title, :set_favicon_url
   after_create -> { fetch_entries('inline') }
 
   def parsed
@@ -23,5 +23,13 @@ class Feed < ApplicationRecord
 
   def set_title
     self.title = parsed.title
+  end
+
+  def set_favicon_url
+    self.favicon_url = Favicon.new(host).url
+  end
+
+  def host
+    URI.parse(url).host
   end
 end

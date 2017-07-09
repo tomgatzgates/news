@@ -43,11 +43,13 @@ article p {
   max-width: 90%;
   margin: 0 auto;
 }
-
 article a {
   color: #333;
-  font-style: italic;
   text-decoration: none;
+}
+article p a {
+  color: #333;
+  font-style: italic;
   border-bottom: 2px solid lightblue;
 
 }
