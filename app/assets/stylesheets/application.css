@@ -27,6 +27,8 @@ nav.top {
   background: lightblue;
   font-weight: 700;
   color: white;
+}
+nav.top .container {
   padding: 16px;
 }
 nav.top a {
