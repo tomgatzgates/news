@@ -23,6 +23,7 @@ class Article
   def page
     Rails.cache.fetch(cache_key, expires_in: 12.hours) do
       Rails.logger.info "Caching article: #{cache_key}"
+
       mercury.parse(url)
     end
   end

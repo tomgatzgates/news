@@ -25,7 +25,8 @@ class Feed < ApplicationRecord
 
   def data
     Rails.cache.fetch(cache_key, expires_in: 15.minutes) do
-      Rails.logger.info "Caching feed articles: #{cache_path}"
+      Rails.logger.info "Caching feed articles: #{cache_key}"
+
       parsed.entries.reduce({}) do |obj, entry|
         article = Article.new(entry, self)
         obj[article.slug] = article
