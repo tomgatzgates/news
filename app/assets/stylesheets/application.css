@@ -19,7 +19,7 @@
  *= require article
  */
 body {
-  font-family: 'avenir';
+  font-family: 'Nunito', 'avenir', sans-serif;
 }
 
 nav.top {

@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order(created_at: :desc)
   end
 
   def show
