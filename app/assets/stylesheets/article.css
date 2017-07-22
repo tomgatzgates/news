@@ -50,7 +50,7 @@ article .byline { /* BBC */
 
 article p {
   max-width: 90%;
-  margin: 0 auto;
+  margin: 0.7em auto;
 }
 article a {
   color: #333;
