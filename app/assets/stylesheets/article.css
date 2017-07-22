@@ -52,6 +52,15 @@ article p {
   max-width: 90%;
   margin: 0.7em auto;
 }
+section.body p:first-child::first-letter {
+  font-family: 'Monoton', cursive;
+  color: lightblue;
+  float: left;
+  font-size: 5rem;
+  line-height: 4rem;
+  padding-top: 12px;
+  padding-right: 8px;
+}
 article a {
   color: #333;
   text-decoration: none;
