@@ -102,6 +102,15 @@ article aside {
   font-size: 1.1em;
 }
 
+.article ul {
+  list-style-type: circle;
+  margin: 0 2rem;
+}
+.article li {
+  margin-left: 2rem;
+  padding-bottom: 0.5rem;
+}
+
 
 progress {
   position: fixed;

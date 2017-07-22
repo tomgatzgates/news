@@ -10,7 +10,7 @@
       <div class="media-body">
         <h3 class="title"><%= entry.title %></h3>
         <p class="summary">
-          <%= truncate(entry.summary, length: 140) %>
+          <%= truncate(entry.forward, length: 140, separator: ' ') %>
 
         </p>
       </div>

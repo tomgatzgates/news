@@ -24,8 +24,8 @@ class Article
       begin
         entry.log "caching article: #{cache_key}"
         Mercury.parse(url)
-      rescue => e
-        entry.log "error parsing article: #{e}", :error
+      rescue => error
+        entry.log "error parsing article: #{error}", :error
         entry.touch :reported_at
       end
     end

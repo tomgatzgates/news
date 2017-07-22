@@ -15,6 +15,7 @@
  *= require reset
  *= require typography
  *= require animate
+ *= require feed
  *= require article
  */
 body {

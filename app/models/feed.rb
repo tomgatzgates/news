@@ -26,7 +26,11 @@ class Feed < ApplicationRecord
   end
 
   def set_favicon_url
-    self.favicon_url = Favicon.new(host).url
+    self.favicon_url = feed_image || Favicon.new(host).url
+  end
+
+  def feed_image
+    parsed.try(:image).try(:url)
   end
 
   def host

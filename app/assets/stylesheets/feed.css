@@ -1,1 +1,12 @@
+.feed-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 0;
+  text-align: center;
+}
 
+.feed-page .icon {
+  width: 30px;
+  margin-bottom: 1rem;
+}

@@ -6,12 +6,13 @@
   </div>
 </nav>
 
-<div id="feed-container">
-  <div class="entry-page">
-    <h1><%= @feed.title %></h1>
-    <%= render partial: 'entries/collection',
-               locals: {entries: @feed.entries} %>
-  </div>
+<div class="feed-page">
+  <h1 class="title"><%= @feed.title %></h1>
+  <% if @feed.favicon_url %>
+    <%= image_tag @feed.favicon_url, class: 'icon' %>
+  <% end %>
+  <%= render partial: 'entries/collection',
+             locals: {entries: @feed.entries} %>
 </div>
 
 
